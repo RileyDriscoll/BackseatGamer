@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 907091018}
+  level: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd0ce2daced49140aeb8f958207ae89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultPos: {x: 0, y: 0, z: 0}
+  charPos: {x: 0, y: 0, z: 0}
+  alreadySet: 0
   scaler: 1
 --- !u!212 &531477085
 SpriteRenderer:
@@ -531,9 +535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691d52420d6162541ab9fdc51a5590b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spwanChance: 0
-  minDelay: 0
-  spike: {fileID: 0}
 --- !u!4 &907091017
 Transform:
   m_ObjectHideFlags: 0
@@ -560,8 +561,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978d2fa53573a2640b8333d315cb2095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBox: {fileID: 0}
-  johnBox: {fileID: 0}
+  playerBox: {fileID: 99030884644360339, guid: 6361055a46522fb4091e83e6bf5fceb4, type: 3}
+  johnBoxR: {fileID: 7761419834417010638, guid: 07d091172efc06840b2ffb4238d46777,
+    type: 3}
+  johnBoxL: {fileID: 2007522296838824516, guid: e17b940804b538e48897ad39330d85cd,
+    type: 3}
   john: {fileID: 531477086}
 --- !u!1 &1032532303
 GameObject:
@@ -605,6 +609,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd0ce2daced49140aeb8f958207ae89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultPos: {x: 0, y: 0, z: 0}
+  charPos: {x: 0, y: 0, z: 0}
+  alreadySet: 0
   scaler: 1.1
 --- !u!212 &1032532306
 SpriteRenderer:
@@ -741,6 +748,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd0ce2daced49140aeb8f958207ae89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultPos: {x: 0, y: 0, z: 0}
+  charPos: {x: 0, y: 0, z: 0}
+  alreadySet: 0
   scaler: 0.5
 --- !u!4 &1641957751
 Transform:

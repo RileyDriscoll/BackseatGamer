@@ -6,10 +6,21 @@ public class CoolGameManager : MonoBehaviour
 {
 
     public DialogueManager dialogue;
+    public LevelManager level;
+
+    public static CoolGameManager singleton;
+
+    private void Awake()
+    {
+        if(singleton != null)
+        {
+            singleton = this;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -18,7 +29,16 @@ public class CoolGameManager : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            dialogue.CreateDialogue("Fuck you", 1);
+            if(level == null)
+            {
+                dialogue.CreateDialogue("Fuck You", 0);
+                dialogue.CreateDialogue("Fuck You", 1);
+            }
+            else
+            {
+                level.StartAction();
+            }
+            
         }
     }
 }

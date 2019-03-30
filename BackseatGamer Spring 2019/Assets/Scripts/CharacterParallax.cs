@@ -5,8 +5,9 @@ using UnityEngine;
 public class CharacterParallax : MonoBehaviour
 {
 
-    private Vector3 defaultPos;
-    private Vector3 charPos;
+    public Vector3 defaultPos;
+    public Vector3 charPos;
+    public bool alreadySet;
     private Vector3 mouseDefault;
     public float scaler;
     // Start is called before the first frame update
@@ -17,9 +18,12 @@ public class CharacterParallax : MonoBehaviour
             scaler = 1;
         }
         charPos = this.transform.position;
-        defaultPos = this.transform.position;
+        if (!alreadySet)
+        {
+            defaultPos = this.transform.position;
+        }
         mouseDefault = Input.mousePosition;
-        Cursor.visible = false;
+        
 
     }
 

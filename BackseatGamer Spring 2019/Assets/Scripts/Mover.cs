@@ -39,8 +39,18 @@ public class Mover : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        transform.position = (new Vector3(transform.position.x + xMove * Time.deltaTime * speed,
-                transform.position.y + yMove * Time.deltaTime * speed, 0));
+        if (GetComponent<CharacterParallax>() != null)
+        {
+            GetComponent<CharacterParallax>().defaultPos += (new Vector3(xMove * Time.deltaTime * speed,
+                    yMove * Time.deltaTime * speed, 0));
+            GetComponent<CharacterParallax>().charPos += (new Vector3(xMove * Time.deltaTime * speed,
+                    yMove * Time.deltaTime * speed, 0));
+        }
+        else
+        {
+            transform.position = (new Vector3(transform.position.x + xMove * Time.deltaTime * speed,
+                    transform.position.y + yMove * Time.deltaTime * speed, 0));
+        }
 
         timePassed += Time.deltaTime;
     }

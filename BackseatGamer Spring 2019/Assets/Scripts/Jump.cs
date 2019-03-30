@@ -20,10 +20,7 @@ public class Jump : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            inJump = true;
-        }
+        
         if (inJump)
         {
             

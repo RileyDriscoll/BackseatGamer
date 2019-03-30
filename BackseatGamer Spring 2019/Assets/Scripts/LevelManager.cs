@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpikeGen : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
-    
+
+    public float timeToFailure;
     // Start is called before the first frame update
     void Start()
     {
-
+        CoolGameManager.singleton.level = this;
     }
 
     // Update is called once per frame
@@ -17,8 +18,8 @@ public class SpikeGen : MonoBehaviour
         
     }
 
-    public GameObject CreateInstance(GameObject obj, Vector3 pos)
+    public void StartAction()
     {
-        return Instantiate(obj, pos, Quaternion.identity);
+
     }
 }
