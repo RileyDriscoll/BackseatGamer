@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterParallax : MonoBehaviour
 {
 
+    private Vector3 defaultPos;
     private Vector3 charPos;
     private Vector3 mouseDefault;
     public float scaler;
@@ -15,7 +16,8 @@ public class CharacterParallax : MonoBehaviour
         {
             scaler = 1;
         }
-        charPos = new Vector3(0, -2.5f, -1);
+        charPos = this.transform.position;
+        defaultPos = this.transform.position;
         mouseDefault = Input.mousePosition;
         Cursor.visible = false;
 
@@ -24,11 +26,11 @@ public class CharacterParallax : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        charPos.x -= (Input.mousePosition.x - mouseDefault.x)*.01f/scaler;
-        charPos.x = Mathf.Max(Mathf.Min(charPos.x, 3*scaler), -3*scaler);
+        charPos.x -= (Input.mousePosition.x - mouseDefault.x)*.01f*scaler;
+        charPos.x = Mathf.Max(Mathf.Min(charPos.x, defaultPos.x + 3*scaler), defaultPos.x + -3*scaler);
 
-        charPos.y -= (Input.mousePosition.y - mouseDefault.y) * .01f/scaler;
-        charPos.y = Mathf.Max(Mathf.Min(charPos.y, -1*scaler), -3*scaler);
+        charPos.y -= (Input.mousePosition.y - mouseDefault.y) * .01f*scaler;
+        charPos.y = Mathf.Max(Mathf.Min(charPos.y, defaultPos.y + 1*scaler), defaultPos.y - 1*scaler);
 
         mouseDefault = Input.mousePosition;
         this.transform.position = charPos;
