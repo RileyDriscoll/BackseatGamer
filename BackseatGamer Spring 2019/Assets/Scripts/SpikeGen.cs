@@ -19,7 +19,7 @@ public class SpikeGen : MonoBehaviour
     {
         if (timePassed > minDelay)
         {
-            if (Random.Range(0, 100) <= spwanChance * Time.deltaTime*2)
+            if (Random.Range(1, 101) <= spwanChance * Time.deltaTime*2)
             {
                 CreateInstance(spike.gameObject, new Vector3(this.transform.position.x, this.transform.position.y));
                 timePassed = 0;
