@@ -19,9 +19,9 @@ public class SpikeGen : MonoBehaviour
     {
         if (timePassed > minDelay)
         {
-            if (Random.Range(1, 100) <= spwanChance)
+            if (Random.Range(0, 100) <= spwanChance * Time.deltaTime*2)
             {
-                Instantiate(spike.gameObject, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+                CreateInstance(spike.gameObject, new Vector3(this.transform.position.x, this.transform.position.y));
                 timePassed = 0;
             }
         }
@@ -29,5 +29,10 @@ public class SpikeGen : MonoBehaviour
         {
             timePassed += Time.deltaTime;
         }
+    }
+
+    public GameObject CreateInstance(GameObject obj, Vector3 pos)
+    {
+        return Instantiate(obj, pos, Quaternion.identity);
     }
 }

@@ -28,9 +28,9 @@ public class BubbleSpawner : MonoBehaviour
 
     void BuildABubble ()
     {
-        GameObject = theBubble;
-        theBubble = Instantiate(bubblePreFab);
-        theBubble
+        //GameObject = theBubble;
+        //theBubble = Instantiate(bubblePreFab);
+        //theBubble
     }
 
 }

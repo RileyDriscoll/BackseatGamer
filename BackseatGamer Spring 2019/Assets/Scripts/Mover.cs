@@ -27,11 +27,11 @@ public class Mover : MonoBehaviour
         }
         if (direction == 2)
         {
-            yMove = -1;
+            xMove = -1;
         }
         if (direction == 3)
         {
-            yMove = 1;
+            xMove = 1;
         }
 
         if (timePassed >= destroyTime)
