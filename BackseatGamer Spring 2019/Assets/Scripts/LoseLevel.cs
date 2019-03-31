@@ -12,6 +12,7 @@ public class LoseLevel : MonoBehaviour
         {
             level.winStatus = false;
             level.gameOver = true;
+            GetComponent<Animator>().Play("JMiniHurtAnimation");
         }
     }
     
