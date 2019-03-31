@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 863bcec7a5711304a95517a1a14ae629
+  - enabled: 1
+    path: Assets/Scenes/RileysSuperFunTestingWorld.unity
+    guid: 8c8d841586d967f4180c4476f06da9db
   m_configObjects: {}
