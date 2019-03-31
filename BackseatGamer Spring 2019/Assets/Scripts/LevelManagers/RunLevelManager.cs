@@ -40,7 +40,7 @@ public class RunLevelManager : LevelManager
             {
                 curSpike = null;
             }
-            else if (Vector3.Distance(jump.transform.position, curSpike.transform.position) < 6f)
+            else if (Vector3.Distance(jump.transform.position, curSpike.transform.position) < 5f)
             {
                 if (Random.Range(0, 101) > 98)
                 {

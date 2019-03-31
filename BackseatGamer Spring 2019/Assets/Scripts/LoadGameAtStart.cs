@@ -4,7 +4,11 @@ using System.Collections;
 
 public class LoadGameAtStart : MonoBehaviour {
 
-	public void RestartGame() {
+    private void Awake()
+    {
+        Cursor.visible = true;
+    }
+    public void RestartGame() {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name); // reloads current scene
  	}
 

@@ -18,5 +18,9 @@ public class NoTouchy : MonoBehaviour
         {
             Application.Quit();
         }
+        if(SceneManager.GetActiveScene().name == "StartMenu")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

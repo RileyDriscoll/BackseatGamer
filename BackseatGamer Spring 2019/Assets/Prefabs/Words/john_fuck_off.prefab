@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4281468608907318214}
   - component: {fileID: 3009735561047303997}
+  - component: {fileID: 609447024873683430}
+  - component: {fileID: 8204872716666604501}
   m_Layer: 0
   m_Name: john_fuck_off
   m_TagString: Untagged
@@ -68,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d346455ac2590be429ba0a0252d1a8db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49dc4580f2da0ba4ba8ea99038e8cd7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -79,3 +81,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &609447024873683430
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796254397577979990}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &8204872716666604501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796254397577979990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c67245074d34754f8a30917825c1693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
