@@ -1,5 +1,16 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!210 &8295488190224083548
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7874081264000271090}
+  m_Enabled: 1
+  m_SortingLayerID: -11720629
+  m_SortingLayer: -1
+  m_SortingOrder: 2
 --- !u!1 &8295488189299752419
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +151,7 @@ MonoBehaviour:
   lastGen: 0
   spawnChance: 70
   altDelay: 1.5
-  minDelay: 1
+  minDelay: 1.5
   maxDelay: 2.5
   spikeA: {fileID: 2050174284808683134, guid: 668048e68c329864fbd20802ca55c108, type: 3}
   spikeB: {fileID: 7298802143955080296, guid: 257124f31beaf4b45bc788a49ece48ae, type: 3}
@@ -320,17 +331,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &8295488190224083548
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7874081264000271090}
-  m_Enabled: 1
-  m_SortingLayerID: -11720629
-  m_SortingLayer: -1
-  m_SortingOrder: 2
 --- !u!1 &8295488190834501957
 GameObject:
   m_ObjectHideFlags: 0

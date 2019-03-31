@@ -17,6 +17,7 @@ public class CoolGameManager : MonoBehaviour
     public GameObject currentGame;
     public int lastGame;
     private float anger;
+    private int wins;
 
     public static CoolGameManager singleton;
 
@@ -35,6 +36,7 @@ public class CoolGameManager : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
+        wins = 0;
         anger = 10;
         if (startUp)
         {
@@ -54,7 +56,7 @@ public class CoolGameManager : MonoBehaviour
         {
             if (level != null)
             {
-                anger -= Time.deltaTime * 3;
+                anger -= Time.deltaTime * 1.5f;
             }
             else
             {
@@ -126,7 +128,7 @@ public class CoolGameManager : MonoBehaviour
         }
         else if (anger >= 65 && anger < 100)
         {
-            if(Random.Range(1,101) > 99)
+            if(Random.Range(1,1001) > 995)
             {
                 randomJohnDia();
             }
@@ -162,13 +164,14 @@ public class CoolGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         Destroy(currentGame);
-        int rand = Random.Range(2, 5);
+        int rand = Random.Range(2, 6);
         while(rand == lastGame)
         {
-            rand = Random.Range(2, 5);
+            rand = Random.Range(2, 6);
         }
         currentGame = Instantiate(miniGames[rand], new Vector3(), Quaternion.identity);
         lastGame = rand;
+        wins += 1;
         yield break;
     }
 
@@ -179,10 +182,10 @@ public class CoolGameManager : MonoBehaviour
         currentGame = Instantiate(miniGames[1], new Vector3(), Quaternion.identity);
         yield return new WaitForSeconds(2);
         Destroy(currentGame);
-        int rand = Random.Range(2, 5);
+        int rand = Random.Range(2, 6);
         while (rand == lastGame)
         {
-            rand = Random.Range(2, 5);
+            rand = Random.Range(2, 6);
         }
         currentGame = Instantiate(miniGames[rand], new Vector3(), Quaternion.identity);
         lastGame = rand;

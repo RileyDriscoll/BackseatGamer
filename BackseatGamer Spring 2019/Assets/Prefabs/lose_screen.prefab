@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7135746678451724928}
   - component: {fileID: 8766307448378880436}
   - component: {fileID: 1632345974551079076}
+  - component: {fileID: 7739603572915305274}
   m_Layer: 0
   m_Name: lose_screen
   m_TagString: Untagged
@@ -193,3 +194,14 @@ MonoBehaviour:
   charPos: {x: 0, y: 0, z: 0}
   alreadySet: 0
   scaler: 0.2
+--- !u!210 &7739603572915305274
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6176076385022392500}
+  m_Enabled: 1
+  m_SortingLayerID: -11720629
+  m_SortingLayer: -1
+  m_SortingOrder: 5
