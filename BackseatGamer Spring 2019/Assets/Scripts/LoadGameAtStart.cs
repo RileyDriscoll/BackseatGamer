@@ -12,4 +12,8 @@ public class LoadGameAtStart : MonoBehaviour {
 		SceneManager.LoadScene("RileysSuperFunTestingWorld"); // reloads current scene
  	}
 
+ 	public void Menu() {
+		SceneManager.LoadScene("StartMenu"); // reloads current scene
+ 	}
+
 }
