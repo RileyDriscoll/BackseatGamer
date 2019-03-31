@@ -122,7 +122,6 @@ public class BalloonLevelManager : LevelManager
 
         balloon.transform.localScale = new Vector3(0, 0, 0);
         stop = false;
-        timePassed = 0;
         threshold = Random.Range(-5, 6);
         inRoutine = false;
         playClose = true;
