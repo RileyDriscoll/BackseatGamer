@@ -12,6 +12,7 @@ public class CoolGameManager : MonoBehaviour
     public GameObject john;
     public Sprite[] johnEmotions;
     public GameObject[] miniGames;
+    public bool startUp;
 
     public GameObject currentGame;
     public int lastGame;
@@ -35,7 +36,10 @@ public class CoolGameManager : MonoBehaviour
     {
         Cursor.visible = false;
         anger = 10;
-        currentGame = Instantiate(miniGames[2], new Vector3(), Quaternion.identity);
+        if (startUp)
+        {
+            currentGame = Instantiate(miniGames[2], new Vector3(), Quaternion.identity);
+        }
         lastGame = 2;
     }
 

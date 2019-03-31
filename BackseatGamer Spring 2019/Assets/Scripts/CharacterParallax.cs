@@ -36,6 +36,8 @@ public class CharacterParallax : MonoBehaviour
         charPos.y -= (Input.mousePosition.y - mouseDefault.y) * .01f*scaler;
         charPos.y = Mathf.Max(Mathf.Min(charPos.y, defaultPos.y + 1*scaler), defaultPos.y - 1*scaler);
 
+        
+
         mouseDefault = Input.mousePosition;
         this.transform.position = charPos;
     }
