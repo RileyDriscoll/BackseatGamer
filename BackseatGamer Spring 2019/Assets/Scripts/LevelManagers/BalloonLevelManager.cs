@@ -8,6 +8,7 @@ public class BalloonLevelManager : LevelManager
     public float cycleDistance; //0.0045
     public GameObject pumpHandle;
     public GameObject balloon;
+    public GameObject particle;
     public AudioClip pop;
     public AudioClip whistle;
     public AudioClip cheer;
@@ -101,8 +102,11 @@ public class BalloonLevelManager : LevelManager
         {
             balloon.transform.position += new Vector3(0.01f, -.05f, 0);
             timer += Time.deltaTime;
+            particle.transform.localScale += (new Vector3(Mathf.Cos(Mathf.PI * timer), Mathf.Cos(Mathf.PI * timer)));
+            particle.transform.Rotate(new Vector3(0, 0, .01f));
             yield return new WaitForSeconds(.01f);
         }
+        particle.transform.localScale = new Vector3();
         gameOver = true;
         winStatus = false;
         yield break;
@@ -113,13 +117,14 @@ public class BalloonLevelManager : LevelManager
         float timer = 0;
         GetComponent<AudioSource>().PlayOneShot(cheer);
         GetComponent<AudioSource>().PlayOneShot(whistle);
-        
-        while (timer < .2f)
+        particle.transform.localScale = (new Vector3(.5f, .5f));
+        while (timer < 1f)
         {
             timer += Time.deltaTime;
-            yield return new WaitForSeconds(.1f);
+            particle.transform.Rotate(new Vector3(0, 0, .01f));
+            yield return new WaitForSeconds(.01f);
         }
-
+        particle.transform.localScale = new Vector3();
         balloon.transform.localScale = new Vector3(0, 0, 0);
         stop = false;
         threshold = Random.Range(-5, 6);

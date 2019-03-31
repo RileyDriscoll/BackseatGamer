@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CoolGameManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class CoolGameManager : MonoBehaviour
     public Sprite[] johnEmotions;
     public GameObject[] miniGames;
     public bool startUp;
+    public TextMeshPro winText;
 
     public GameObject currentGame;
     public int lastGame;
@@ -172,6 +174,7 @@ public class CoolGameManager : MonoBehaviour
         currentGame = Instantiate(miniGames[rand], new Vector3(), Quaternion.identity);
         lastGame = rand;
         wins += 1;
+        winText.text = wins.ToString();
         yield break;
     }
 
