@@ -12,6 +12,7 @@ public class CoolGameManager : MonoBehaviour
     public GameObject john;
     public Sprite[] johnEmotions;
     public GameObject[] miniGames;
+    public bool startUp;
 
     public GameObject currentGame;
     public int lastGame;
@@ -35,7 +36,10 @@ public class CoolGameManager : MonoBehaviour
     {
         Cursor.visible = false;
         anger = 10;
-        currentGame = Instantiate(miniGames[2], new Vector3(), Quaternion.identity);
+        if (startUp)
+        {
+            currentGame = Instantiate(miniGames[2], new Vector3(), Quaternion.identity);
+        }
         lastGame = 2;
     }
 
@@ -158,10 +162,10 @@ public class CoolGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         Destroy(currentGame);
-        int rand = Random.Range(2, 4);
+        int rand = Random.Range(2, 5);
         while(rand == lastGame)
         {
-            rand = Random.Range(2, 4);
+            rand = Random.Range(2, 5);
         }
         currentGame = Instantiate(miniGames[rand], new Vector3(), Quaternion.identity);
         lastGame = rand;
@@ -175,10 +179,10 @@ public class CoolGameManager : MonoBehaviour
         currentGame = Instantiate(miniGames[1], new Vector3(), Quaternion.identity);
         yield return new WaitForSeconds(2);
         Destroy(currentGame);
-        int rand = Random.Range(2, 4);
+        int rand = Random.Range(2, 5);
         while (rand == lastGame)
         {
-            rand = Random.Range(2, 4);
+            rand = Random.Range(2, 5);
         }
         currentGame = Instantiate(miniGames[rand], new Vector3(), Quaternion.identity);
         lastGame = rand;

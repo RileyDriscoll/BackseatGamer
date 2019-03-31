@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6484245161653857346}
   - component: {fileID: 7135746678451724928}
   - component: {fileID: 8766307448378880436}
+  - component: {fileID: 1632345974551079076}
   m_Layer: 0
   m_Name: lose_screen
   m_TagString: Untagged
@@ -176,3 +177,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1632345974551079076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6176076385022392500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd0ce2daced49140aeb8f958207ae89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultPos: {x: 0, y: 0, z: 0}
+  charPos: {x: 0, y: 0, z: 0}
+  alreadySet: 0
+  scaler: 0.2
