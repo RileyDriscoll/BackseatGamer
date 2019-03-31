@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 3828813563930993918}
   - component: {fileID: 309178751010121750}
   - component: {fileID: 4242788240033124570}
+  - component: {fileID: 5973664134642584720}
+  - component: {fileID: 2808676609580810124}
   m_Layer: 0
-  m_Name: RoadDebris
-  m_TagString: Untagged
+  m_Name: DebrisA
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,3 +98,45 @@ MonoBehaviour:
   speed: 6
   timePassed: 0
   destroyTime: 10
+--- !u!114 &5973664134642584720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050174284808683134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd0ce2daced49140aeb8f958207ae89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultPos: {x: 0, y: 0, z: 0}
+  charPos: {x: 0, y: 0, z: 0}
+  alreadySet: 0
+  scaler: 0.2
+--- !u!61 &2808676609580810124
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050174284808683134}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.57, y: 3.63}
+    newSize: {x: 1.73, y: 1.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.57, y: 3.63}
+  m_EdgeRadius: 0

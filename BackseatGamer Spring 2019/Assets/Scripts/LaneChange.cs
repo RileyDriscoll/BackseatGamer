@@ -6,16 +6,16 @@ public class LaneChange : MonoBehaviour
 {
 
     public float duration;
-    private Vector3 startPos;
     //private GameObject car;
     private float timeElapsed;
     private float totalDeltaX;
     private bool changing;
+    private bool rightLane;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rightLane = true;
     }
 
     // Update is called once per frame
@@ -26,11 +26,12 @@ public class LaneChange : MonoBehaviour
             timeElapsed += Time.deltaTime;
             if (timeElapsed < duration)
             {
-                transform.position = new Vector3(startPos.x + (totalDeltaX / timeElapsed), startPos.y, startPos.z);
+                transform.position += new Vector3(totalDeltaX * Time.deltaTime, 0, 0);
             }
             else
             {
                 changing = false;
+                timeElapsed = 0;
             }
         }
     }
@@ -39,17 +40,19 @@ public class LaneChange : MonoBehaviour
     {
         if (changing == false)
         {
-            startPos = transform.position;
-            if (startPos.x < 0)
+            
+            if (rightLane)
             {
-                totalDeltaX = 4;
+                totalDeltaX = -8;
+                rightLane = false;
             }
             else
             {
-                totalDeltaX = -4;
+                totalDeltaX = 8;
+                rightLane = true;
             }
             changing = true;
-            timeElapsed = .1F;
+            timeElapsed = 0;
         }
     }
 }

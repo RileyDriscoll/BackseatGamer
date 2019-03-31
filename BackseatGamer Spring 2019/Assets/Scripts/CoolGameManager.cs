@@ -11,6 +11,7 @@ public class CoolGameManager : MonoBehaviour
     public GameObject angerFace;
     public GameObject john;
     public Sprite[] johnEmotions;
+    public GameObject[] miniGames;
 
     private float anger;
 
@@ -31,7 +32,8 @@ public class CoolGameManager : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
-        anger = 80;
+        anger = 10;
+        Instantiate(miniGames[0], new Vector3(), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -43,7 +45,14 @@ public class CoolGameManager : MonoBehaviour
         }
         else if(anger != 100)
         {
-            anger -= Time.deltaTime*5;
+            if (level != null)
+            {
+                anger -= Time.deltaTime * 3;
+            }
+            else
+            {
+                anger -= Time.deltaTime;
+            }
         }
         handleAnger();
 
