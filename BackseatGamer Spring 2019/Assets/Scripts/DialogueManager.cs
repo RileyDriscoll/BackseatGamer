@@ -15,8 +15,11 @@ public class DialogueManager : MonoBehaviour
     public string[] words;
     public GameObject[] texts;
 
+
+
     private void Start()
     {
+
         wordTable = new Dictionary<string, GameObject>();
         for(int i = 0; i < words.Length; i++)
         {
@@ -55,7 +58,9 @@ public class DialogueManager : MonoBehaviour
         GameObject textObj = GetComponent<SpikeGen>().CreateInstance(wordTable[text], new Vector3(diaBox.transform.position.x,
                 diaBox.transform.position.y));
         textObj.transform.parent = diaBox.transform;
-        textObj.transform.position += new Vector3(0, 0, diaBox.transform.position.z); 
+        textObj.transform.position += new Vector3(0, 0, diaBox.transform.position.z - 1);
+        
+        
 
         return diaBox;
     }

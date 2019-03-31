@@ -28,7 +28,7 @@ public class CharacterParallax : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         charPos.x -= (Input.mousePosition.x - mouseDefault.x)*.01f*scaler;
         charPos.x = Mathf.Max(Mathf.Min(charPos.x, defaultPos.x + 3*scaler), defaultPos.x + -3*scaler);

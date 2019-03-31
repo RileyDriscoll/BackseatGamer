@@ -16,16 +16,25 @@ public class RunLevelManager : LevelManager
     void Start()
     {
         timePassed = 0;
+        CoolGameManager.singleton.level = this;
+        actionText = "Jump";
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!GetComponent<AudioSource>().isPlaying)
+        {
+            winStatus = true;
+            gameOver = true;
+        }
         if (timePassed > minDelay)
         {
             if (Random.Range(1, 101) <= spwanChance * Time.deltaTime * 2)
             {
-                spikeGen.CreateInstance(spike.gameObject, new Vector3(spikeGen.transform.position.x, spikeGen.transform.position.y));
+                spikeGen.CreateInstance(spike.gameObject, new Vector3(spikeGen.transform.position.x, 
+                    spikeGen.transform.position.y,spikeGen.transform.position.z));
                 timePassed = 0;
             }
         }
@@ -35,8 +44,10 @@ public class RunLevelManager : LevelManager
         }
     }
 
-    public new void StartAction()
+    public override void StartAction()
     {
         jump.StartJump();
     }
+
+    
 }

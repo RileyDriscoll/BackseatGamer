@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 7761419834417010638, guid: 07d091172efc06840b2ffb4238d46777,
         type: 3}
       propertyPath: m_Name
-      value: placeholder john_dialogue_box_ Left
+      value: placeholder john_dialogue_box_ Left Variant
       objectReference: {fileID: 0}
     - target: {fileID: 807550131437231281, guid: 07d091172efc06840b2ffb4238d46777,
         type: 3}
@@ -71,7 +71,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d4ccc04f46f4aa446b2952af3dec0295,
+      objectReference: {fileID: 21300000, guid: f7881c4669d5f624ea343fd0f9f5b62d,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07d091172efc06840b2ffb4238d46777, type: 3}

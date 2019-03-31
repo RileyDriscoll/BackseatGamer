@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5371782150590969109}
   - component: {fileID: 8139045840991694191}
+  - component: {fileID: 6000486441914736269}
+  - component: {fileID: 8359232961718973896}
   m_Layer: 0
   m_Name: player_jump
   m_TagString: Untagged
@@ -79,3 +81,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &6000486441914736269
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493657397291706239}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &8359232961718973896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493657397291706239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c67245074d34754f8a30917825c1693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

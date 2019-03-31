@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8961392847484580375}
   - component: {fileID: 9079701419470231542}
+  - component: {fileID: 2975870407737520140}
+  - component: {fileID: 7305840809003178664}
   m_Layer: 0
   m_Name: player_stop
   m_TagString: Untagged
@@ -79,3 +81,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &2975870407737520140
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773932446165999388}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &7305840809003178664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773932446165999388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c67245074d34754f8a30917825c1693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

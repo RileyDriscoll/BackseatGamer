@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4115733089278821178}
   - component: {fileID: 7277475924251407591}
   - component: {fileID: 3134011346724407457}
+  - component: {fileID: 1342807085552964618}
+  - component: {fileID: 2063334755907449167}
   m_Layer: 0
   m_Name: placeholder john_dialogue_box_1
   m_TagString: Untagged
@@ -113,3 +115,26 @@ MonoBehaviour:
   charPos: {x: 0, y: 0, z: 0}
   alreadySet: 1
   scaler: 1
+--- !u!210 &1342807085552964618
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7761419834417010638}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &2063334755907449167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7761419834417010638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c67245074d34754f8a30917825c1693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
