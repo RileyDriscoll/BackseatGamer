@@ -8,6 +8,7 @@ public class BalloonLevelManager : LevelManager
     public float cycleDistance; //0.0045
     public GameObject pumpHandle;
     public GameObject balloon;
+    public AudioClip pop;
     public float inflationRate;
 
     private float timePassed;
@@ -21,21 +22,32 @@ public class BalloonLevelManager : LevelManager
         timePassed = 0;
         currTime = 0;
         threshold = Random.Range(-5, 6);
+        winStatus = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        currTime += Time.deltaTime;
-        fluctuation = Random.Range(1, 10);
-        if (balloon.transform.localScale.x + currTime*inflationRate/fluctuation > (1 + .02 * threshold)) 
+        if (!GetComponent<AudioSource>().isPlaying || gameOver == true)
         {
-            balloon.transform.localScale = new Vector3(0, 0, 0);
-            threshold = Random.Range(-5, 6);
+            gameOver = true;
         }
-        balloon.transform.localScale += new Vector3(currTime*inflationRate/fluctuation, currTime*inflationRate/fluctuation);
-        currTime = 0;
-        pumpHandle.transform.position += new Vector3(0, cycleDistance * (Mathf.Sin((Mathf.PI * .5f * timePassed))));
-        timePassed += Time.deltaTime;
+        else
+        {
+            currTime += Time.deltaTime;
+            fluctuation = Random.Range(1, 10);
+            balloon.transform.localScale += new Vector3(currTime * inflationRate / fluctuation, currTime * inflationRate / fluctuation);
+            currTime = 0;
+            pumpHandle.transform.position += new Vector3(0, cycleDistance * (Mathf.Sin((Mathf.PI * .5f * timePassed))));
+            timePassed += Time.deltaTime;
+            if (balloon.transform.localScale.x + currTime * inflationRate / fluctuation > (1 + .02 * threshold))
+            {
+                balloon.transform.localScale = new Vector3(0, 0, 0);
+                winStatus = false;
+                gameOver = true;
+                threshold = Random.Range(-5, 6);
+                GetComponent<AudioSource>().PlayOneShot(pop);
+            }
+        }
     }
 }
