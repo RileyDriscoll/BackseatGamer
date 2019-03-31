@@ -1,5 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream
 --- !u!1 &2050174284808683134
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,6 +35,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!212 &309178751010121750
 SpriteRenderer:
   m_ObjectHideFlags: 0
