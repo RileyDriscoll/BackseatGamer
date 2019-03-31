@@ -26,12 +26,20 @@ public class CarLevelManager : LevelManager
         timePassed = 0;
         lastWasLeft = true;
         weight = 5;
+        CoolGameManager.singleton.level = this;
+        actionText = "Change";
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!GetComponent<AudioSource>().isPlaying)
+        {
+            winStatus = true;
+            gameOver = true;
+        }
+
         if (timePassed > minDelay)
         {
             if (Random.Range(1, 101) <= spawnChance * Time.deltaTime * 2 || timePassed > maxDelay)

@@ -11,7 +11,10 @@ public class CoolGameManager : MonoBehaviour
     public GameObject angerFace;
     public GameObject john;
     public Sprite[] johnEmotions;
+    public GameObject[] miniGames;
 
+    public GameObject currentGame;
+    public int lastGame;
     private float anger;
 
     public static CoolGameManager singleton;
@@ -31,7 +34,9 @@ public class CoolGameManager : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
-        anger = 80;
+        anger = 10;
+        currentGame = Instantiate(miniGames[2], new Vector3(), Quaternion.identity);
+        lastGame = 2;
     }
 
     // Update is called once per frame
@@ -43,7 +48,14 @@ public class CoolGameManager : MonoBehaviour
         }
         else if(anger != 100)
         {
-            anger -= Time.deltaTime*5;
+            if (level != null)
+            {
+                anger -= Time.deltaTime * 3;
+            }
+            else
+            {
+                anger -= Time.deltaTime;
+            }
         }
         handleAnger();
 
@@ -67,7 +79,7 @@ public class CoolGameManager : MonoBehaviour
             else
             {
                 dialogue.CreateDialogue(level.actionText, 0);
-                if (anger >= 32)
+                if (anger >= 32 && Random.Range(1,101) > 30)
                 {
                     dialogue.CreateDialogue("StopTellin", 1);
                 }
@@ -132,11 +144,44 @@ public class CoolGameManager : MonoBehaviour
 
     private void showWin()
     {
-
+        Destroy(currentGame);
+        currentGame = Instantiate(miniGames[0], new Vector3(), Quaternion.identity);
+        StartCoroutine(waitToChangeWin());
     }
 
     private void showLoss()
     {
+        StartCoroutine(waitToChangeLoss());
+    }
 
+    private IEnumerator waitToChangeWin()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(currentGame);
+        int rand = Random.Range(2, 4);
+        while(rand == lastGame)
+        {
+            rand = Random.Range(2, 4);
+        }
+        currentGame = Instantiate(miniGames[rand], new Vector3(), Quaternion.identity);
+        lastGame = rand;
+        yield break;
+    }
+
+    private IEnumerator waitToChangeLoss()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(currentGame);
+        currentGame = Instantiate(miniGames[1], new Vector3(), Quaternion.identity);
+        yield return new WaitForSeconds(2);
+        Destroy(currentGame);
+        int rand = Random.Range(2, 4);
+        while (rand == lastGame)
+        {
+            rand = Random.Range(2, 4);
+        }
+        currentGame = Instantiate(miniGames[rand], new Vector3(), Quaternion.identity);
+        lastGame = rand;
+        yield break;
     }
 }

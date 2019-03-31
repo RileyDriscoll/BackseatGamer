@@ -36,6 +36,14 @@ public class Jump : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            GetComponent<Animator>().Play("JMiniHurtAnimation");
+        }
+    }
+
     public void StartJump()
     {
         inJump = true;

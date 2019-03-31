@@ -11,8 +11,7 @@ public class LoseLevel : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             level.winStatus = false;
-            level.gameOver = true;
-            GetComponent<Animator>().Play("JMiniHurtAnimation");
+            level.gameOver = true;  
         }
     }
     
