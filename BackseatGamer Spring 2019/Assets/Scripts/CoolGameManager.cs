@@ -162,10 +162,10 @@ public class CoolGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         Destroy(currentGame);
-        int rand = Random.Range(2, 4);
+        int rand = Random.Range(2, 5);
         while(rand == lastGame)
         {
-            rand = Random.Range(2, 4);
+            rand = Random.Range(2, 5);
         }
         currentGame = Instantiate(miniGames[rand], new Vector3(), Quaternion.identity);
         lastGame = rand;
@@ -179,10 +179,10 @@ public class CoolGameManager : MonoBehaviour
         currentGame = Instantiate(miniGames[1], new Vector3(), Quaternion.identity);
         yield return new WaitForSeconds(2);
         Destroy(currentGame);
-        int rand = Random.Range(2, 4);
+        int rand = Random.Range(2, 5);
         while (rand == lastGame)
         {
-            rand = Random.Range(2, 4);
+            rand = Random.Range(2, 5);
         }
         currentGame = Instantiate(miniGames[rand], new Vector3(), Quaternion.identity);
         lastGame = rand;
