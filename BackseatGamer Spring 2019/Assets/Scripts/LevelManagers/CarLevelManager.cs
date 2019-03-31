@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarLevelManager : LevelManager
 {
-    public GameObject car;
+    public LaneChange car;
     public SpikeGen leftLane;
     public SpikeGen rightLane;
     public float lastGen;
@@ -125,8 +125,8 @@ public class CarLevelManager : LevelManager
             timePassed += Time.deltaTime;
         }
     }
-    //public new void StartAction()
-    //{
-    //    car.StartChanging();
-    //}
+    public override void StartAction()
+    {
+        car.StartChanging();
+    }
 }
