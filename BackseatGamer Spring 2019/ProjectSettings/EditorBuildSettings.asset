@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RileysSuperFunTestingWorld.unity
     guid: 8c8d841586d967f4180c4476f06da9db
+  - enabled: 1
+    path: Assets/Scenes/LoseScreen.unity
+    guid: 201ebeb8406d59041af4857519bbd820
   m_configObjects: {}

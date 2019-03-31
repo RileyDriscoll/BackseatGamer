@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CoolGameManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class CoolGameManager : MonoBehaviour
     public GameObject[] miniGames;
     public bool startUp;
     public TextMeshPro winText;
+    public Transform reference;
 
     public GameObject currentGame;
     public int lastGame;
@@ -40,10 +42,10 @@ public class CoolGameManager : MonoBehaviour
     {
         Cursor.visible = false;
         wins = 0;
-        anger = 10;
+        anger = 0;
         if (startUp)
         {
-            currentGame = Instantiate(miniGames[2], new Vector3(), Quaternion.identity);
+            currentGame = Instantiate(miniGames[2], reference.position, Quaternion.identity);
         }
         lastGame = 2;
         lastLastGame = 2;
@@ -91,7 +93,8 @@ public class CoolGameManager : MonoBehaviour
                 dialogue.CreateDialogue(level.actionText, 0);
                 if (anger >= 32 && Random.Range(1,101) > 30)
                 {
-                    dialogue.CreateDialogue("StopTellin", 1);
+                    string[] things = { "StopTellin", "FuckOff", "GoingTo", "IKnow", "Mom" };
+                    dialogue.CreateDialogue(things[Random.Range(0,5)], 1);
                 }
                 level.StartAction();
             }
@@ -143,6 +146,7 @@ public class CoolGameManager : MonoBehaviour
         {
             anger = 100;
             john.GetComponent<SpriteRenderer>().sprite = johnEmotions[3];
+            StartCoroutine(startRealLoss());
         }
     }
 
@@ -155,7 +159,7 @@ public class CoolGameManager : MonoBehaviour
     private void showWin()
     {
         Destroy(currentGame);
-        currentGame = Instantiate(miniGames[0], new Vector3(), Quaternion.identity);
+        currentGame = Instantiate(miniGames[0], reference.position, Quaternion.identity);
         StartCoroutine(waitToChangeWin());
     }
 
@@ -164,6 +168,12 @@ public class CoolGameManager : MonoBehaviour
         StartCoroutine(waitToChangeLoss());
     }
 
+    private IEnumerator startRealLoss()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("LoseScreen");
+        yield break;
+    }
     private IEnumerator waitToChangeWin()
     {
         yield return new WaitForSeconds(2);
@@ -173,7 +183,7 @@ public class CoolGameManager : MonoBehaviour
         {
             rand = Random.Range(2, 6);
         }
-        currentGame = Instantiate(miniGames[rand], new Vector3(), Quaternion.identity);
+        currentGame = Instantiate(miniGames[rand], reference.position, Quaternion.identity);
         lastLastGame = lastGame;
         lastGame = rand;
         wins += 1;
