@@ -241,6 +241,8 @@ MonoBehaviour:
   cycleTime: 2.5
   cycleDistance: 0.0045
   pumpHandle: {fileID: 369972811}
+  balloon: {fileID: 1523015179}
+  inflationRate: 0.25
 --- !u!1 &1523015179
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +253,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1523015181}
   - component: {fileID: 1523015180}
-  - component: {fileID: 1523015182}
   m_Layer: 0
   m_Name: Balloon
   m_TagString: Untagged
@@ -296,7 +297,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d45c3399c3ea2c94f8315a530ee8d60a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d12bdc6e359acd64d803dc35f41720e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -315,31 +316,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523015179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.75, y: -0.7, z: 0.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.808, y: -0.79, z: 0.1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1523015182
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523015179}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a5c433a6b80024748bb735d5fa3b7b10, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1542118933
 GameObject:
   m_ObjectHideFlags: 0
