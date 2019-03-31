@@ -81,8 +81,7 @@ public class BalloonLevelManager : LevelManager
             if (balloon.transform.localScale.x + currTime * inflationRate / fluctuation > (1 + .02 * threshold) && !inRoutine)
             {
                 balloon.transform.localScale = new Vector3(0, 0, 0);
-                winStatus = false;
-                gameOver = true;
+                StartCoroutine(failSeq());
                 threshold = Random.Range(-5, 6);
                 GetComponent<AudioSource>().PlayOneShot(pop);
             }
@@ -103,7 +102,7 @@ public class BalloonLevelManager : LevelManager
             balloon.transform.position += new Vector3(0.01f, -.05f, 0);
             timer += Time.deltaTime;
             particle.transform.localScale += (new Vector3(Mathf.Cos(Mathf.PI * timer), Mathf.Cos(Mathf.PI * timer)));
-            particle.transform.Rotate(new Vector3(0, 0, .01f));
+            particle.transform.Rotate(new Vector3(0, 0, 90f * timer));
             yield return new WaitForSeconds(.01f);
         }
         particle.transform.localScale = new Vector3();
@@ -121,7 +120,7 @@ public class BalloonLevelManager : LevelManager
         while (timer < 1f)
         {
             timer += Time.deltaTime;
-            particle.transform.Rotate(new Vector3(0, 0, .01f));
+            particle.transform.Rotate(new Vector3(0, 0, 10f*timer));
             yield return new WaitForSeconds(.01f);
         }
         particle.transform.localScale = new Vector3();

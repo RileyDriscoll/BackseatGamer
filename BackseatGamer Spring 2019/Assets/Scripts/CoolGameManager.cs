@@ -18,6 +18,7 @@ public class CoolGameManager : MonoBehaviour
 
     public GameObject currentGame;
     public int lastGame;
+    public int lastLastGame;
     private float anger;
     private int wins;
 
@@ -45,6 +46,7 @@ public class CoolGameManager : MonoBehaviour
             currentGame = Instantiate(miniGames[2], new Vector3(), Quaternion.identity);
         }
         lastGame = 2;
+        lastLastGame = 2;
     }
 
     // Update is called once per frame
@@ -167,11 +169,12 @@ public class CoolGameManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         Destroy(currentGame);
         int rand = Random.Range(2, 6);
-        while(rand == lastGame)
+        while(rand == lastGame || rand == lastLastGame)
         {
             rand = Random.Range(2, 6);
         }
         currentGame = Instantiate(miniGames[rand], new Vector3(), Quaternion.identity);
+        lastLastGame = lastGame;
         lastGame = rand;
         wins += 1;
         winText.text = wins.ToString();
@@ -186,11 +189,12 @@ public class CoolGameManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         Destroy(currentGame);
         int rand = Random.Range(2, 6);
-        while (rand == lastGame)
+        while (rand == lastGame || rand == lastLastGame)
         {
             rand = Random.Range(2, 6);
         }
         currentGame = Instantiate(miniGames[rand], new Vector3(), Quaternion.identity);
+        lastLastGame = lastGame;
         lastGame = rand;
         yield break;
     }
